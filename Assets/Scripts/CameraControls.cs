@@ -1,11 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using OVR;
 
 public class CameraControls : MonoBehaviour
 {
     public float speed = 10;
+    public string sceneName;
 
     void Update()
     {
+
+#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+
 
         if (Time.deltaTime > 0.2f) return; // Prevent Random bullshit rotation on app loading or lag
 
@@ -49,5 +55,17 @@ public class CameraControls : MonoBehaviour
         {
             transform.position -= transform.up * Time.deltaTime * speed * 0.6f;
         }
+
+#endif
+    }
+
+    void FixedUpdate()
+    {
+#if (DEVELOPMENT_BUILD)
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+#endif
     }
 }
