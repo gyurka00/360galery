@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/szugy_1.unity
+    guid: 4f3d8881372ef7639aaf1282a08b8187
+  - enabled: 1
+    path: Assets/Scenes/szugy_2.unity
+    guid: 7ca94aa4fa0d1268bb67fa1b39b0f306
+  - enabled: 1
+    path: Assets/Scenes/szugy_3.unity
+    guid: 00e2ed1d74e568814b49758ca259981e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8de97454e48cc2491a141d3dd92f0edd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e928902239fbabae0a2030c62b886176, type: 2}
