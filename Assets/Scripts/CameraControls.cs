@@ -10,7 +10,7 @@ public class CameraControls : MonoBehaviour
     void Update()
     {
 
-#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+#if (UNITY_EDITOR)
 
 
         if (Time.deltaTime > 0.2f) return; // Prevent Random bullshit rotation on app loading or lag
@@ -57,12 +57,8 @@ public class CameraControls : MonoBehaviour
         }
 
 #endif
-    }
-
-    void FixedUpdate()
-    {
 #if (DEVELOPMENT_BUILD)
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
             SceneManager.LoadScene(sceneName);
         }
